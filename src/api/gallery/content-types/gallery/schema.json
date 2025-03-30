@@ -38,7 +38,7 @@
     },
     "Cover": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images"
@@ -59,6 +59,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::gallery.gallery"
+    },
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
