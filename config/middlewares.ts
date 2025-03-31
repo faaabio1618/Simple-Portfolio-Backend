@@ -30,7 +30,7 @@ export default [
     {
         name: 'strapi::cors',
         config: {
-            origin: ['http://localhost', 'https://demo.filippi.dev'],
+            origin: ['*'],
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
             keepHeaderOnError: true,
