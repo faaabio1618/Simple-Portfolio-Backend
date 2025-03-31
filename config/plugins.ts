@@ -19,4 +19,22 @@ export default ({env}) => ({
             },
         },
     },
+    graphql: {
+        config:{
+            defaultLimit: 100,
+            maxLimit: 1000,
+            apolloServer: {
+                tracing: false,
+                cacheControl: false,
+                introspection: true,
+                playgroundAlways: true,
+                context: async ({ ctx }) => {
+                    return {
+                        user: ctx.state.user || null,
+                        state: ctx.state,
+                    };
+                },
+            },
+        }
+    }
 });
