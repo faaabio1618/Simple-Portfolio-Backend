@@ -33,14 +33,5 @@ export default [
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
-  'strapi::public',
-  {
-    name: 'strapi::graphql',
-    config: {
-      endpoint: '/graphql',
-      apolloServer: {
-        tracing: false,
-      },
-    },
-  },
+  'strapi::public'
 ];
