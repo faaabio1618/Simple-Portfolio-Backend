@@ -20,20 +20,15 @@ export default ({env}) => ({
         },
     },
     graphql: {
-        config:{
+        config: {
             defaultLimit: 100,
             maxLimit: 1000,
+            shadowCRUD: true,
+            landingPage: true, // disable Sandbox everywhere
+            depthLimit: 7,
+            amountLimit: 100,
             apolloServer: {
                 tracing: false,
-                cacheControl: false,
-                introspection: true,
-                playgroundAlways: true,
-                context: async ({ ctx }) => {
-                    return {
-                        user: ctx.state.user || null,
-                        state: ctx.state,
-                    };
-                },
             },
         }
     }
