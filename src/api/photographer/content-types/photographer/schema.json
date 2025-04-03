@@ -26,7 +26,7 @@
     "Email": {
       "type": "email"
     },
-    "instagram": {
+    "Instagram": {
       "type": "string"
     },
     "PhoneNumber": {
@@ -45,31 +45,46 @@
         }
       }
     },
-    "Pictures": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "Logo": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
       "multiple": false,
       "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
+    },
+    "MainPortfolio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::portfolio.portfolio"
+    },
+    "OtherPortfolios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::portfolio.portfolio"
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "InstagramPosts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.instagram-post"
     }
   }
 }

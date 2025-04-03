@@ -477,11 +477,13 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
+    Cover: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Email: Schema.Attribute.Email;
-    instagram: Schema.Attribute.String;
+    Instagram: Schema.Attribute.String;
+    InstagramPosts: Schema.Attribute.Component<'link.instagram-post', true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -494,17 +496,21 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    MainPortfolio: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::portfolio.portfolio'
+    >;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
+    OtherPortfolios: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio.portfolio'
+    >;
     PhoneNumber: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Pictures: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     publishedAt: Schema.Attribute.DateTime;
     Surname: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

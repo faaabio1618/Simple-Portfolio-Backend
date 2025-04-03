@@ -24,7 +24,7 @@ export default ({env}) => ({
             defaultLimit: 100,
             maxLimit: 1000,
             shadowCRUD: true,
-            landingPage: true, // disable Sandbox everywhere
+            landingPage: false,
             depthLimit: 7,
             amountLimit: 100,
             apolloServer: {

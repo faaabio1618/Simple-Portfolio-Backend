@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface LinkInstagramPost extends Struct.ComponentSchema {
+  collectionName: 'components_link_instagram_posts';
+  info: {
+    description: '';
+    displayName: 'Instagram Post';
+    icon: 'feather';
+  };
+  attributes: {
+    Url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://www.instagram.com/p/DEDKLF7vm2X/'>;
+  };
+}
+
 export interface LinkLink extends Struct.ComponentSchema {
   collectionName: 'components_link_links';
   info: {
@@ -15,6 +29,7 @@ export interface LinkLink extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'link.instagram-post': LinkInstagramPost;
       'link.link': LinkLink;
     }
   }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_link_instagram_posts",
+  "info": {
+    "displayName": "Instagram Post",
+    "icon": "feather",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Url": {
+      "type": "string",
+      "default": "https://www.instagram.com/p/DEDKLF7vm2X/",
+      "required": true
+    }
+  }
+}
