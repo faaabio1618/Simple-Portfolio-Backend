@@ -411,6 +411,8 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     Slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    Style: Schema.Attribute.Enumeration<['Masonry', 'Slide']> &
+      Schema.Attribute.DefaultTo<'Masonry'>;
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
