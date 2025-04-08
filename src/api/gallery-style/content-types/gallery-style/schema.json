@@ -29,11 +29,6 @@
     },
     "ShowNextGallery": {
       "type": "boolean"
-    },
-    "Default": {
-      "type": "boolean",
-      "default": false,
-      "required": false
     }
   }
 }

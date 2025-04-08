@@ -64,11 +64,6 @@
         "files",
         "videos"
       ]
-    },
-    "InstagramPosts": {
-      "type": "component",
-      "repeatable": true,
-      "component": "link.instagram-post"
     }
   }
 }

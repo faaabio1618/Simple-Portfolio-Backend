@@ -3613,10 +3613,20 @@
     "@strapi/icons" "2.0.0-rc.18"
     react-intl "6.6.2"
 
-"@strapi/plugin-graphql@^5.12.1":
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-5.12.1.tgz#6e9e48d81e5899de1bbcfe45a170b9a92ff0e42b"
-  integrity sha512-p1amQPR4OIyZmzqJeaYcedDMBTbLpSf41c4ygNjv2UFXEN2iFZlKtjWwxaC117V46ZLVvFg4KJbBKsjYXntGLQ==
+"@strapi/plugin-color-picker@^5.12.3":
+  version "5.12.3"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-color-picker/-/plugin-color-picker-5.12.3.tgz#f73bdf54113d45d7b7a66dc086b74f11cafe8ec7"
+  integrity sha512-Bm3LHtnTKmD8VgNC0x8Q/PEL9YLrZou8+R5ihXj/2AYRbRhqTY2M6wHQUcV5yr5SKrBIRlieiKjpOlhT/D7XkA==
+  dependencies:
+    "@strapi/design-system" "2.0.0-rc.18"
+    "@strapi/icons" "2.0.0-rc.18"
+    react-colorful "5.6.1"
+    react-intl "6.6.2"
+
+"@strapi/plugin-graphql@^5.12.3":
+  version "5.12.3"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-5.12.3.tgz#83b9e37693083d39123659eee9320ee4117fc136"
+  integrity sha512-gJ9tc6coQJMLwjwhT85NB0Fp7FF5sS2jo547cA1wH9A+15uN847LE/RMCgCgXtQKWLEN30QHV1eiZ2B4+qFnwg==
   dependencies:
     "@apollo/server" "4.11.0"
     "@as-integrations/koa" "1.1.1"
@@ -3625,7 +3635,7 @@
     "@koa/cors" "5.0.0"
     "@strapi/design-system" "2.0.0-rc.18"
     "@strapi/icons" "2.0.0-rc.18"
-    "@strapi/utils" "5.12.1"
+    "@strapi/utils" "5.12.3"
     graphql "^16.8.1"
     graphql-depth-limit "^1.1.0"
     graphql-playground-middleware-koa "^1.6.21"
@@ -3878,10 +3888,10 @@
     yup "0.32.9"
     zod "^3.22.4"
 
-"@strapi/utils@5.12.1":
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.12.1.tgz#a6d0d3d268dafe9bb67e4619fa696323f7158d61"
-  integrity sha512-A9z+M6zayNLDjRaz9dh6rTAemF0rDJAcqZRR+k723G2lEJB7DfM/jWIcfXAB6ignadxCpwT9JauPl9jLKWtXLQ==
+"@strapi/utils@5.12.3":
+  version "5.12.3"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.12.3.tgz#46ae12b2626d61d1cd388a179ffc4777f92e5eaa"
+  integrity sha512-Lo36TB7A1yQDqPb9w2UTiKvAhHUwkrXcbw7ZpymzmudnoOWn93Z0WQkV9Cqj76L6lQcGUUNMOAEzl79i26CMgw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -9933,6 +9943,11 @@ rc@1.2.8, rc@^1.2.7, rc@^1.2.8:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-colorful@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"
+  integrity sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==
 
 react-dnd-html5-backend@16.0.1:
   version "16.0.1"

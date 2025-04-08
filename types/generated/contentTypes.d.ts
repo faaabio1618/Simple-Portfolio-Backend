@@ -385,7 +385,6 @@ export interface ApiGalleryStyleGalleryStyle
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Default: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -463,36 +462,6 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
-  collectionName: 'headers';
-  info: {
-    description: '';
-    displayName: 'Header';
-    pluralName: 'headers';
-    singularName: 'header';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Links: Schema.Attribute.Component<'link.link', true> &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::header.header'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
   collectionName: 'photographers';
   info: {
@@ -522,7 +491,6 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     Email: Schema.Attribute.Email;
     Instagram: Schema.Attribute.String;
-    InstagramPosts: Schema.Attribute.Component<'link.instagram-post', true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -577,6 +545,39 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSiteSite extends Struct.SingleTypeSchema {
+  collectionName: 'sites';
+  info: {
+    description: '';
+    displayName: 'Site';
+    pluralName: 'sites';
+    singularName: 'site';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DefaultGalleryStyle: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::gallery-style.gallery-style'
+    >;
+    HeaderColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
+      Schema.Attribute.Private;
+    Menu: Schema.Attribute.Component<'link.menu', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    ShowInstagram: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1094,9 +1095,9 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::gallery-style.gallery-style': ApiGalleryStyleGalleryStyle;
       'api::gallery.gallery': ApiGalleryGallery;
-      'api::header.header': ApiHeaderHeader;
       'api::photographer.photographer': ApiPhotographerPhotographer;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
+      'api::site.site': ApiSiteSite;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

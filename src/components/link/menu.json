@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_link_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "enumeration",
+      "enum": [
+        "/contact",
+        "/portfolio",
+        "/about"
+      ]
+    }
+  }
+}
