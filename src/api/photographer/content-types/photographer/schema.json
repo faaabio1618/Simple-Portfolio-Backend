@@ -45,22 +45,6 @@
         }
       }
     },
-    "Logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "MainPortfolio": {
       "type": "relation",
       "relation": "oneToOne",

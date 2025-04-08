@@ -66,12 +66,9 @@
       "unique": true
     },
     "Style": {
-      "type": "enumeration",
-      "enum": [
-        "Masonry",
-        "Slide"
-      ],
-      "default": "Masonry"
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gallery-style.gallery-style"
     }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gallery_styles",
+  "info": {
+    "singularName": "gallery-style",
+    "pluralName": "gallery-styles",
+    "displayName": "Gallery Style",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "MainStyle": {
+      "type": "enumeration",
+      "enum": [
+        "Tiles",
+        "Slider"
+      ]
+    },
+    "ShowTitles": {
+      "type": "boolean"
+    },
+    "NrColumns": {
+      "type": "integer"
+    },
+    "ShowNextGallery": {
+      "type": "boolean"
+    },
+    "Default": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

@@ -369,6 +369,41 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGalleryStyleGalleryStyle
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'gallery_styles';
+  info: {
+    description: '';
+    displayName: 'Gallery Style';
+    pluralName: 'gallery-styles';
+    singularName: 'gallery-style';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Default: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery-style.gallery-style'
+    > &
+      Schema.Attribute.Private;
+    MainStyle: Schema.Attribute.Enumeration<['Tiles', 'Slider']>;
+    Name: Schema.Attribute.String;
+    NrColumns: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    ShowNextGallery: Schema.Attribute.Boolean;
+    ShowTitles: Schema.Attribute.Boolean;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
   collectionName: 'galleries';
   info: {
@@ -411,8 +446,10 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     Slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    Style: Schema.Attribute.Enumeration<['Masonry', 'Slide']> &
-      Schema.Attribute.DefaultTo<'Masonry'>;
+    Style: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::gallery-style.gallery-style'
+    >;
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -491,13 +528,6 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::photographer.photographer'
     >;
-    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     MainPortfolio: Schema.Attribute.Relation<
       'oneToOne',
       'api::portfolio.portfolio'
@@ -1062,6 +1092,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::gallery-style.gallery-style': ApiGalleryStyleGalleryStyle;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::header.header': ApiHeaderHeader;
       'api::photographer.photographer': ApiPhotographerPhotographer;
