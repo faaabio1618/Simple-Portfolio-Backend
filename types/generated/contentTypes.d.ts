@@ -479,13 +479,13 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    Address: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    Cover: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    AboutMe: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -496,21 +496,8 @@ export interface ApiPhotographerPhotographer extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::photographer.photographer'
     >;
-    MainPortfolio: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::portfolio.portfolio'
-    >;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
-    OtherPortfolios: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::portfolio.portfolio'
-    >;
-    PhoneNumber: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    PhoneNumber: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Surname: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -570,14 +557,15 @@ export interface ApiSiteSite extends Struct.SingleTypeSchema {
       'oneToOne',
       'api::gallery-style.gallery-style'
     >;
-    HeaderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    Footer: Schema.Attribute.Component<'link.footer', false>;
+    Home: Schema.Attribute.Component<'page.homepage', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
       Schema.Attribute.Private;
-    Menu: Schema.Attribute.Component<'link.menu', true>;
+    Menu: Schema.Attribute.Component<'menu.menu', false>;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    PhotographerName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    ShowInstagram: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

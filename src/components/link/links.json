@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_link_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Page": {
+      "type": "enumeration",
+      "enum": [
+        "/portfolio",
+        "/contact",
+        "/about"
+      ]
+    }
+  }
+}

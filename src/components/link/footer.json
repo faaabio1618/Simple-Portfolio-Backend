@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_link_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "arrowDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LeftSide": {
+      "type": "string",
+      "default": "© {year}"
+    },
+    "ShowInstagram": {
+      "type": "boolean"
+    },
+    "ShowPhoneNumber": {
+      "type": "boolean"
+    },
+    "ShowEmail": {
+      "type": "boolean"
+    }
+  }
+}

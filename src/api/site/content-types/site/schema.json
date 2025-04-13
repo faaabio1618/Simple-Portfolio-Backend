@@ -11,24 +11,35 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "ShowInstagram": {
-      "type": "boolean"
-    },
     "DefaultGalleryStyle": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::gallery-style.gallery-style"
     },
-    "HeaderColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "Footer": {
+      "displayName": "Footer",
+      "type": "component",
+      "repeatable": false,
+      "component": "link.footer"
+    },
+    "Name": {
+      "type": "string",
+      "required": true
     },
     "Menu": {
       "displayName": "Menu",
       "type": "component",
-      "repeatable": true,
-      "component": "link.menu"
+      "repeatable": false,
+      "component": "menu.menu"
+    },
+    "Home": {
+      "displayName": "Homepage",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.homepage"
+    },
+    "PhotographerName": {
+      "type": "string"
     }
   }
 }

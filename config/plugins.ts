@@ -31,5 +31,10 @@ export default ({env}) => ({
                 tracing: false,
             },
         }
+    },
+    'ckeditor': {
+        config: {
+            licenseKey: env.CKEDITOR_LICENSE_KEY,
+        }
     }
 });

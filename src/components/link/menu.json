@@ -2,7 +2,8 @@
   "collectionName": "components_link_menus",
   "info": {
     "displayName": "Menu",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,20 @@
         "/portfolio",
         "/about"
       ]
+    },
+    "Cover": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "portfolio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::portfolio.portfolio"
     }
   }
 }

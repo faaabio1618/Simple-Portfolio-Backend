@@ -23,47 +23,21 @@
     "Surname": {
       "type": "string"
     },
-    "Email": {
-      "type": "email"
-    },
     "Instagram": {
       "type": "string"
     },
     "PhoneNumber": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "string"
     },
-    "Address": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+    "Email": {
+      "type": "email"
     },
-    "MainPortfolio": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::portfolio.portfolio"
-    },
-    "OtherPortfolios": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::portfolio.portfolio"
-    },
-    "Cover": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
+    "AboutMe": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

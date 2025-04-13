@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_homepages",
+  "info": {
+    "displayName": "Homepage",
+    "icon": "house",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ShowInstagram": {
+      "type": "boolean"
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "ShowAboutMe": {
+      "type": "boolean"
+    }
+  }
+}
