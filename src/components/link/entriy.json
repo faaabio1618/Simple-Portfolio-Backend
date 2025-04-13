@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_link_links",
+  "collectionName": "components_link_entriys",
   "info": {
-    "displayName": "Links",
-    "icon": "link",
+    "displayName": "Entry",
+    "icon": "bulletList",
     "description": ""
   },
   "options": {},
@@ -13,9 +13,9 @@
     "Page": {
       "type": "enumeration",
       "enum": [
+        "/about",
         "/portfolio",
-        "/contact",
-        "/about"
+        "/contact"
       ]
     }
   }

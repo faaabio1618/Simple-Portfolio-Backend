@@ -7,12 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "Links": {
-      "displayName": "Links",
-      "type": "component",
-      "repeatable": true,
-      "component": "link.links"
-    },
     "BackgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
@@ -27,6 +21,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::portfolio.portfolio"
+    },
+    "Entry": {
+      "displayName": "Entriy",
+      "type": "component",
+      "repeatable": true,
+      "component": "link.entriy"
     }
   }
 }

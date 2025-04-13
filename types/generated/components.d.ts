@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface LinkEntriy extends Struct.ComponentSchema {
+  collectionName: 'components_link_entriys';
+  info: {
+    description: '';
+    displayName: 'Entry';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    Page: Schema.Attribute.Enumeration<['/about', '/portfolio', '/contact']>;
+  };
+}
+
 export interface LinkFooter extends Struct.ComponentSchema {
   collectionName: 'components_link_footers';
   info: {
@@ -13,19 +26,6 @@ export interface LinkFooter extends Struct.ComponentSchema {
     ShowEmail: Schema.Attribute.Boolean;
     ShowInstagram: Schema.Attribute.Boolean;
     ShowPhoneNumber: Schema.Attribute.Boolean;
-  };
-}
-
-export interface LinkLinks extends Struct.ComponentSchema {
-  collectionName: 'components_link_links';
-  info: {
-    description: '';
-    displayName: 'Links';
-    icon: 'link';
-  };
-  attributes: {
-    Label: Schema.Attribute.String;
-    Page: Schema.Attribute.Enumeration<['/portfolio', '/contact', '/about']>;
   };
 }
 
@@ -57,7 +57,7 @@ export interface MenuMenu extends Struct.ComponentSchema {
   attributes: {
     BackgroundColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    Links: Schema.Attribute.Component<'link.links', true>;
+    Entry: Schema.Attribute.Component<'link.entriy', true>;
     MainPortfolio: Schema.Attribute.Relation<
       'oneToOne',
       'api::portfolio.portfolio'
@@ -93,8 +93,8 @@ export interface PageHomepage extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'link.entriy': LinkEntriy;
       'link.footer': LinkFooter;
-      'link.links': LinkLinks;
       'link.menu': LinkMenu;
       'menu.menu': MenuMenu;
       'page.home': PageHome;
